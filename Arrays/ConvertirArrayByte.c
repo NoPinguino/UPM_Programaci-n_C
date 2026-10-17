@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void	converir_a_binario(int	num, int *byte);
+void	conv_binary(int	num, int *byte);
 
 int	main()
 {
@@ -9,6 +9,7 @@ int	main()
 
 	num = 42;
 	conv_binary(num, byte);
+
 	for (int i = 0; i < 8; i++)
 	{
 		printf("%d", byte[i]);
@@ -20,6 +21,7 @@ void	conv_binary(int	num, int *byte)
 {
 	for (int i = 0; i < 8; i++)
 	{
-		
+		byte[8 - 1 - i] = num % 2;
+		num = num / 2;
 	}
 }
